@@ -10,7 +10,7 @@ Dikembangkan oleh
 ## Fitur
 
 - Donasi uang mulai dari 10 ribu!
-- Donasi sembako dengan mengngirimkan ke PO Box
+- Donasi sembako dengan mengirimkan ke PO Box
 - Beli paket sembako untuk didonasikan
 
 ## Tech
