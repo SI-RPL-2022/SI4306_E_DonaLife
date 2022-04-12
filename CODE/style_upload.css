@@ -82,7 +82,7 @@ body{
     background-color: #f7f9f9;
     cursor: pointer;
 }
-.button{
+/* .button{
     float: right;
     width: 170px;
     border-radius: 50px;
@@ -105,4 +105,4 @@ body{
 .button:hover{
     background-position: 100%;
     color: #a1befc;
-}
+} */
