@@ -1,0 +1,19 @@
+.transaction{
+    background:linear-gradient(#0A9E9E , #0A9E9E );
+    background-size: cover;
+    height: 100vh;
+    width: 100%; 
+}
+.transaction h1{
+    font-family: 'Lobster', cursive;
+}
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color:#1d3555;
+    color: white;
+    font-weight: 700;
+    border-radius:60px;
+}
