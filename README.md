@@ -9,9 +9,10 @@ Dikembangkan oleh
 
 ## Fitur
 
-- Donasi uang mulai dari 10 ribu!
-- Donasi sembako dengan mengirimkan ke PO Box
-- Beli paket sembako untuk didonasikan
+- Donasi Uang
+- Donasi Sembako
+- Melihat Perkembangan Donasi
+- Request Membuat Campaign Donasi
 
 ## Tech
 - Dikembangkan dengan Laravel
@@ -20,6 +21,15 @@ Dikembangkan oleh
 ## Instalasi
 ```sh
 clone git repo
-salin environment Laravel 
-Jalankan program!
+salin environment Laravel (DB_DATABASE=donalife & DB_PORT=Portnya ikutin sesuai Xampp yang bagian MySQL)
+
+Buat database dengan nama donalife
+Buka cmd pada directory
+Ketikan perintah berikut : 
+- php artisan migrate
+- php artisan db:seed
+- php artisan storage:link
+- php artisan serve
+
+Jalankan program dengan mengklik link yg tersedia setelah serve!
 ```
