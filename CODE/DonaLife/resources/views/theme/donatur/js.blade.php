@@ -1,0 +1,9 @@
+<script src="{{asset('semicolon/js/jquery.js')}}"></script>
+<script src="{{asset('semicolon/js/plugins.min.js')}}"></script>
+<script src="{{asset('semicolon/js/functions.js')}}"></script>
+<script src="{{asset('js/toastr.js')}}"></script>
+<script src="{{asset('js/swa2.js')}}"></script>
+<script src="{{asset('js/method.js')}}"></script>
+<script src="{{asset('js/functions.js')}}"></script>
+<script src="{{asset('js/plugin.js')}}"></script>
+<script src="{{asset('js/confirm.js')}}"></script>
