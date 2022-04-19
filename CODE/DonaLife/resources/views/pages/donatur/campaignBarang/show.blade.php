@@ -87,7 +87,7 @@
                                                 <div class="comment-content clearfix">
                                                     <div class="comment-author">{{$barangCampaign->inisiator->nama}}<i class="icon-ok" style="color:blue;"></i><span><a title="Permalink to this comment">Bergabung pada {{$barangCampaign->inisiator->created_at->format('Y-m-d')}}</a></span></div>
                                                     <p> 
-                                                        <i>Menggalang utnuk <a>#{{$barangCampaign->judul}}</a> </i>
+                                                        <i>Menggalang untuk <a>#{{$barangCampaign->judul}}</a> </i>
                                                     </p>
                                                 </div>
 
