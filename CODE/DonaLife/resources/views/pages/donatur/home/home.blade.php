@@ -5,14 +5,12 @@
             <h1>Uang Campaign</h1>
         </div>
 
-    </section><!-- #page-title end -->
+    </section>
     
     <section id="content">
         <div class="content-wrap">
             <div class="container clearfix">
 
-                <!-- Shop
-                ============================================= -->
                 <div id="shop" class="shop row grid-container gutter-30" data-layout="fitRows">
                     @foreach($uangCampaign as $uc)
                     @php

@@ -8,9 +8,6 @@
                         <div class="row gutter-40">
 
                             <div class="col-md-5">
-
-                                <!-- Product Single - Gallery
-                                ============================================= -->
                                 <div class="product-image">
                                     <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
                                         <div class="flexslider">
@@ -20,9 +17,9 @@
                                         </div>
                                     </div>
                                     @if($uangCampaign->status == 'mengumpulkan')
-                                        <div class="sale-flash badge bg-secondary p-2">{{$uangCampaign->status}}</div>
+                                    <div class="sale-flash badge bg-secondary p-2">{{$uangCampaign->status}}</div>
                                     @elseif($uangCampaign->status == 'disalurkan')
-                                        <div class="sale-flash badge bg-success p-2">{{$uangCampaign->status}}</div>
+                                    <div class="sale-flash badge bg-success p-2">{{$uangCampaign->status}}</div>
                                     @endif
                                 </div>
                             </div>
@@ -31,7 +28,7 @@
 
                                 <div class="product-title">
                                     <h3>
-                                       {{$uangCampaign->judul}}
+                                        {{$uangCampaign->judul}}
                                     </h3>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
@@ -39,9 +36,9 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width:{{$totalDonasi != 0 ? ($totalDonasi / $uangCampaign->target_nominal)*100 : 1}}%" aria-valuenow="" aria-valuemin="0" aria-valuemax=""></div>
-                                    </div>
+                                        <div class="progress progress-sm mr-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width:{{$totalDonasi != 0 ? ($totalDonasi / $uangCampaign->target_nominal)*100 : 1}}%" aria-valuenow="" aria-valuemin="0" aria-valuemax=""></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
@@ -50,27 +47,27 @@
 
                                 <div class="line"></div>
 
-                                
-                                <form class="cart mb-0 d-flex justify-content-between align-items-center" >
+
+                                <form class="cart mb-0 d-flex justify-content-between align-items-center">
                                     <div class="quantity ">
                                         @php
-                                             $banyakOrangDonasi = \DB::table('uang_donasi')->where('campaign_uang_id',$uangCampaign->id)->count();
+                                        $banyakOrangDonasi = \DB::table('uang_donasi')->where('campaign_uang_id',$uangCampaign->id)->count();
                                         @endphp
-                                       <input type="text" name="quantity" value="{{$banyakOrangDonasi;}} Donasi" class="form-control" disabled/>
+                                        <input type="text" name="quantity" value="{{$banyakOrangDonasi;}} Donasi" class="form-control" disabled />
                                     </div>
                                     @if($uangCampaign->status == 'mengumpulkan')
-                                        @guest
-                                            <a href="{{route('auth.index')}}" class="add-to-cart button m-0">Donasi Sekarang</a>
-                                        @endguest
-                                        @auth
-                                            <a  href="{{route('uang-donasi.create', $uangCampaign->id)}}" class="add-to-cart button m-0">Donasi Sekarang</a>
-                                        @endauth
+                                    @guest
+                                    <a href="{{route('auth.index')}}" class="add-to-cart button m-0">Donasi Sekarang</a>
+                                    @endguest
+                                    @auth
+                                    <a href="{{route('uang-donasi.create', $uangCampaign->id)}}" class="add-to-cart button m-0">Donasi Sekarang</a>
+                                    @endauth
                                     @endif
                                 </form>
 
                                 <div class="line"></div>
                                 <p>{{$uangCampaign->deskripsi}}</p>
-                                
+
                                 <div class="line w-100"></div>
 
                                 <div id="reviews" class="clearfix">
@@ -80,16 +77,16 @@
                                         <div class="comment-author"><i>Inisiator</i></div>
                                         <li class="comment even thread-even depth-1" id="li-comment-1">
                                             <div id="comment-1" class="comment-wrap clearfix">
-                                                
+
                                                 <div class="comment-meta">
                                                     <div class="comment-author vcard">
                                                         <span class="comment-avatar clearfix">
-                                                        <img alt='Image' src='{{'https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60'}}' height='60' width='60' /></span>
+                                                            <img alt='Image' src='{{'https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60'}}' height='60' width='60' /></span>
                                                     </div>
                                                 </div>
                                                 <div class="comment-content clearfix">
                                                     <div class="comment-author">{{$uangCampaign->inisiator->nama}}<i class="icon-ok" style="color:blue;"></i><span><a title="Permalink to this comment">Bergabung pada {{$uangCampaign->inisiator->created_at->format('Y-m-d')}}</a></span></div>
-                                                    <p> 
+                                                    <p>
                                                         <i>Menggalang utnuk <a>#{{$uangCampaign->judul}}</a> </i>
                                                     </p>
                                                 </div>
@@ -160,28 +157,28 @@
 
 
                                                     @foreach($donator as $data)
-                                                        <li class="comment even thread-even depth-1" id="li-comment-1">
-                                                            <div id="comment-1" class="comment-wrap clearfix">
+                                                    <li class="comment even thread-even depth-1" id="li-comment-1">
+                                                        <div id="comment-1" class="comment-wrap clearfix">
 
-                                                                <div class="comment-meta">
-                                                                    <div class="comment-author vcard">
-                                                                        <span class="comment-avatar clearfix">
+                                                            <div class="comment-meta">
+                                                                <div class="comment-author vcard">
+                                                                    <span class="comment-avatar clearfix">
                                                                         <img alt='Image' src='https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' height='60' width='60' /></span>
-                                                                    </div>
                                                                 </div>
-
-                                                                <div class="comment-content clearfix">
-                                                                    <div class="comment-author">{{\Str::of($data->donatur->nama)->limit(5)}}<span><a href="#" title="Permalink to this comment">{{$data->created_at->format('Y-m-d H:i:s')}}</a></span></div>
-                                                                    <p>{{$data->pesan}}</p>
-                                                                    <div class="review-comment-ratings">
-                                                                      Rp. {{number_format($data->nominal)}}
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="clear"></div>
-
                                                             </div>
-                                                        </li>
+
+                                                            <div class="comment-content clearfix">
+                                                                <div class="comment-author">{{\Str::of($data->donatur->nama)->limit(5)}}<span><a href="#" title="Permalink to this comment">{{$data->created_at->format('Y-m-d H:i:s')}}</a></span></div>
+                                                                <p>{{$data->pesan}}</p>
+                                                                <div class="review-comment-ratings">
+                                                                    Rp. {{number_format($data->nominal)}}
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="clear"></div>
+
+                                                        </div>
+                                                    </li>
                                                     @endforeach
 
                                                 </ol>
@@ -264,38 +261,40 @@
 
                         @foreach($allUangCampaign as $data)
                         @php
-                            $donasiTotal =  \DB::table('uang_donasi')->where('campaign_uang_id',$data->id)->sum('nominal');
+                        $donasiTotal = \DB::table('uang_donasi')->where('campaign_uang_id',$data->id)->sum('nominal');
                         @endphp
-                            <div class="oc-item">
-                                <div class="product">
-                                    <div class="product-image">
-                                        <a href="{{route('uang-campaign.show',$data->id)}}"><img src="{{$data->image}}"></a>
-                                        <a href="{{route('uang-campaign.show',$data->id)}}"><img src="{{$data->image}}"></a>
-                                        <div class="badge bg-success p-2">{{$data->status}}</div>
-                                        {{-- <div class="bg-overlay">
+                        <div class="oc-item">
+                            <div class="product">
+                                <div class="product-image">
+                                    <a href="{{route('uang-campaign.show',$data->id)}}"><img src="{{$data->image}}"></a>
+                                    <a href="{{route('uang-campaign.show',$data->id)}}"><img src="{{$data->image}}"></a>
+                                    <div class="badge bg-success p-2">{{$data->status}}</div>
+                                    {{-- <div class="bg-overlay">
                                             <div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
                                                 <a href="#" class="btn btn-dark me-2"><i class="icon-shopping-cart"></i></a>
                                                 <a href="include/ajax/shop-item.html" class="btn btn-dark" data-lightbox="ajax"><i class="icon-line-expand"></i></a>
                                             </div>
                                             <div class="bg-overlay-bg bg-transparent"></div>
                                         </div> --}}
+                                </div>
+                                <div class="product-desc center">
+                                    <div class="product-title">
+                                        <h3><a href="#">{{$data->judul}}</a></h3>
                                     </div>
-                                    <div class="product-desc center">
-                                        <div class="product-title"><h3><a href="#">{{$data->judul}}</a></h3></div>
-                                        <div class="product-price">Target Donasi : <ins>Rp. {{number_format($data->target_nominal)}}</ins></div>
-                                    </div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col">
+                                    <div class="product-price">Target Donasi : <ins>Rp. {{number_format($data->target_nominal)}}</ins></div>
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col">
                                         <div class="progress progress-sm mr-2">
                                             <div class="progress-bar bg-info" role="progressbar" style="width:{{($donasiTotal / $data->target_nominal)*100}}%" aria-valuenow="" aria-valuemin="0" aria-valuemax=""></div>
                                         </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-desc center">
-                                        <div class="product-price"> Donasi Terkumpul : <ins>Rp. {{number_format($donasiTotal)}}</ins></div>
                                     </div>
                                 </div>
+                                <div class="product-desc center">
+                                    <div class="product-price"> Donasi Terkumpul : <ins>Rp. {{number_format($donasiTotal)}}</ins></div>
+                                </div>
                             </div>
+                        </div>
                         @endforeach
                     </div>
 
@@ -303,5 +302,5 @@
 
             </div>
         </div>
-    </section><!-- #content end -->
+    </section>
 </x-donatur-layout>

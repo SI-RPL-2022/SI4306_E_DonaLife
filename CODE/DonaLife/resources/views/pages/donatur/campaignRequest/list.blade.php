@@ -10,14 +10,14 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Gambar</th>
-                                <th>Deskripsi</th>
-                                <th>Jenis</th>
-                                <th>Status</th>
-                              </tr>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Gambar</th>
+                                    <th>Deskripsi</th>
+                                    <th>Jenis</th>
+                                    <th>Status</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 @foreach ($collection as $i => $requestUser)
