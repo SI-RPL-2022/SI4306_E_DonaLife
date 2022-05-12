@@ -19,6 +19,9 @@
                                 </a>
                                 <span>Your Profile Bio</span>
                             </div>
+
+                            <div id="list_result"></div>
+                            <div class="clear"></div>
                         </div>
                     </div>
                 </div>
