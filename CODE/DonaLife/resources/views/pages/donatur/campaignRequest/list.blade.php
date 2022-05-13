@@ -38,6 +38,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
@@ -45,3 +46,4 @@
         </div>
     </div>
 </section>
+{{$collection->links('theme.admin.pagination')}}
