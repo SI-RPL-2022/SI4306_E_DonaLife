@@ -137,7 +137,7 @@
 </form>
 
 <script>
-    @if($user - > province_id)
+    @if($user -> province_id)
     $('#province').val('{{$user->province_id}}');
     setTimeout(function() {
         $('#province').trigger('change');
