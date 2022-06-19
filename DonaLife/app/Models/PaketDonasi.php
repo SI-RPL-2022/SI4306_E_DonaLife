@@ -13,10 +13,6 @@ class PaketDonasi extends Model
     public function donatur(){
         return $this->belongsTo(User::class,'user_id','id');
     }
-    
-    // public function paket(){
-
-    // }
 
     public function campaign(){
         return $this->belongsTo(BarangCampaign::class,'campaign_barang_id','id');

@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="col-lg-6">
             <h3>Alamat</h3>
             <div class="row mb-0">
@@ -37,7 +37,7 @@
                     <select class="form-control" name="province" id="province" class="form-control" required>
                         <option value="">Pilih Provinsi</option>
                         @foreach ($provinsi as $item)
-                        <option value="{{$item->id}}" {{$item->id==$user->province_id?'selected':''}}>{{$item->name}}</option>
+                            <option value="{{$item->id}}"{{$item->id==$user->province_id?'selected':''}}>{{$item->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -45,13 +45,13 @@
                     <label for="city">City / Town</label>
                     <select class="form-control" name="city" id="city" class="form-control" required>
                         <option value="">Pilih Provinsi Terlebih Dahulu</option>
-                    </select>
+                    </select>                
                 </div>
                 <div class="col-6 form-group">
                     <label for="subdistrict">Subdistrict</label>
                     <select class="form-control" name="subdistrict" id="subdistrict" class="form-control" required>
                         <option value="">Pilih Kota Terlebih Dahulu</option>
-                    </select>
+                    </select>                
                 </div>
                 <div class="col-6 form-group">
                     <label for="postcode">Postcode</label>
@@ -114,7 +114,7 @@
 
                 <div class="col-6 form-group">
                     <label for="rekening">Rekening</label>
-                    <input type="tel" disabled value="{{Auth::user()->rekening}}" class="sm-form-control" />
+                    <input type="tel" disabled  value="{{Auth::user()->rekening}}" class="sm-form-control" />
                 </div>
 
                 <div class="col-6 form-group">
@@ -132,47 +132,43 @@
         </div>
 
         @endif
-        <button class="btn btn-primary" onclick="load_list(1);">Kembali</button>
+        <button class="btn btn-primary"onclick="load_list(1);">Kembali</button>
     </div>
 </form>
 
 <script>
-    @if($user -> province_id)
+    @if($user->province_id)
     $('#province').val('{{$user->province_id}}');
-    setTimeout(function() {
+    setTimeout(function(){ 
         $('#province').trigger('change');
-        setTimeout(function() {
+        setTimeout(function(){ 
             $('#city').val('{{$user->city_id}}');
             $('#city').trigger('change');
-            setTimeout(function() {
+            setTimeout(function(){ 
                 $('#subdistrict').val('{{$user->subdistrict_id}}');
             }, 2000);
         }, 2000);
     }, 1000);
     @endif
-    $("#province").change(function() {
-        $.ajax({
-            type: "POST",
-            url: "{{route('city.get_list')}}",
-            data: {
-                id_province: $("#province").val()
-            },
-            success: function(response) {
-                $("#city").html(response);
-            }
+    $("#province").change(function(){
+            $.ajax({
+                type: "POST",
+                url: "{{route('city.get_list')}}",
+                data: {id_province : $("#province").val()},
+                success: function(response){
+                    $("#city").html(response);
+                }
+            });
         });
-    });
-    $("#city").change(function() {
-        $.ajax({
-            type: "POST",
-            url: "{{route('subdistrict.get_list')}}",
-            data: {
-                id_city: $("#city").val()
-            },
-            success: function(response) {
-                $("#subdistrict").html(response);
-            }
+        $("#city").change(function(){
+            $.ajax({
+                type: "POST",
+                url: "{{route('subdistrict.get_list')}}",
+                data: {id_city : $("#city").val()},
+                success: function(response){
+                    $("#subdistrict").html(response);
+                }
+            });
         });
-    });
-    number_only('rekening');
+        number_only('rekening');
 </script>

@@ -77,7 +77,7 @@ class BeritaCampaignBarangController extends Controller
         }
         $berita_campaignBarang = new Berita;
         $berita_campaignBarang->campaign_barang_id = $request->campaign;
-        $file = request()->file('foto')->store("beritaBarangampaign");
+        $file = request()->file('foto')->store("beritaBarangCampaign");
         $berita_campaignBarang->foto = $file;
         $berita_campaignBarang->deskripsi = $request->deskripsi;
         $berita_campaignBarang->tanggal_mulai_campaign = $request->tanggal_mulai;

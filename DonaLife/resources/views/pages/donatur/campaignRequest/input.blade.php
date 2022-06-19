@@ -8,7 +8,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <form class="row" id="form_permintaan">
+                        <form class="row" id="form_permintaan" >
                             <div class="form-process">
                                 <div class="css3-spinner">
                                     <div class="css3-spinner-scaler"></div>
@@ -51,4 +51,4 @@
 
         </div>
     </div>
-</section>
+</section><!-- #content end -->

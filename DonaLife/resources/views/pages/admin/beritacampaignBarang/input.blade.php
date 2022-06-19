@@ -49,7 +49,7 @@
                             <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" value="{{ \Carbon\Carbon::parse($data->tanggal_mulai_campaign)->format('Y-m-d')  }}">
                         </div>
                         <div class="col-lg-12 mb-10">
-                            <label for="tanggal_selesai" class="required form-label">Tanggal Selesai Campaigni</label>
+                            <label for="tanggal_selesai" class="required form-label">Tanggal Selesai Campaign</label>
                             <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" value="{{ \Carbon\Carbon::parse($data->tanggal_selesai_campaign)->format('Y-m-d')  }}">
                         </div>
                     </div>
