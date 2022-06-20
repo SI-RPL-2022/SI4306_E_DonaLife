@@ -6,7 +6,6 @@
                 <div class="postcontent">
 
                     <h2>List Donasi Anda</h2>
-
                     <h3>Uang Donasi</h3>
 
                     <div class="table-responsive">
