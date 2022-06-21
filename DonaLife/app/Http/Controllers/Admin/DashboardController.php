@@ -9,6 +9,7 @@ use App\Models\UangCampaign;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -29,7 +30,38 @@ class DashboardController extends Controller
         $barangCampaign = BarangCampaign::count();
         $uangCampaign = UangCampaign::count();
         $paket = Paket::count();
-        return view('pages.admin.dashboard.main',compact('user','barangCampaign','uangCampaign','paket'));
+        $data = UangCampaign::select('id','created_at')->get()->groupBy(function($data){
+            return Carbon::parse($data->created_at)->format('M');
+        });
+
+        $months = [];
+        $monthcount = [];
+        foreach($data as $month => $values){
+            $months[]=$month;
+            $monthcount[]=count($values);
+        }
+        $data2 = BarangCampaign::select('id','created_at')->get()->groupBy(function($data2){
+            return Carbon::parse($data2->created_at)->format('M');
+        });
+
+        $months2 = [];
+        $monthcount2 = [];
+        foreach($data2 as $month2 => $values2){
+            $months2[]=$month2;
+            $monthcount2[]=count($values2);
+        }
+
+        $data3 = User::select('id','created_at')->get()->groupBy(function($data3){
+            return Carbon::parse($data3->created_at)->format('M');
+        });
+
+        $months3 = [];
+        $monthcount3 = [];
+        foreach($data3 as $month3 => $values3){
+            $months3[]=$month3;
+            $monthcount3[]=count($values3);
+        }
+        return view('pages.admin.dashboard.main',['data'=>$data, 'data2'=> $data2, 'data3'=> $data3,'months'=>json_encode($months),'months2'=>json_encode($months2),'months3'=>json_encode($months3),'monthcount'=>json_encode($monthcount),'monthcount2'=>json_encode($monthcount2),'monthcount3'=>json_encode($monthcount3)],compact('user','barangCampaign','uangCampaign','paket'));
     }
 
     public function user(Request $request)
